@@ -4,4 +4,6 @@ test.sh
 nvim
 
 spell/
-lazy-lock.json
+
+# Local-only plugin installs (prefer lazy.nvim-managed plugins)
+pack/
