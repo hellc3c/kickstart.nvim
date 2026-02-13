@@ -10,6 +10,62 @@ A starting point for Neovim that is:
 
 **NOT** a Neovim distribution, but instead a starting point for your configuration.
 
+## Fork Notes
+
+This repository is a personal fork of kickstart.nvim.
+
+Customizations are kept in `lua/custom/` to reduce conflicts when syncing upstream:
+
+- `lua/custom/core/`: options, keymaps, autocmds
+- `lua/custom/plugins/`: extra plugins (loaded via `{ import = 'custom.plugins' }`)
+
+### Plugin Sync (lazy-lock.json)
+
+This repo tracks `lazy-lock.json` so multiple machines can stay on identical plugin versions.
+
+- New machine / after pulling changes: run `:Lazy sync`
+- Intentionally upgrade plugins: run `:Lazy update`, then commit the updated `lazy-lock.json`
+
+### Sync With Upstream kickstart.nvim
+
+Add upstream remote once:
+
+```sh
+git remote add upstream https://github.com/nvim-lua/kickstart.nvim.git
+```
+
+Then sync:
+
+```sh
+git fetch upstream
+git merge upstream/master
+```
+
+### Themes
+
+This config keeps multiple themes available:
+
+- tokyonight (`tokyonight-night`)
+- rose-pine (`rose-pine`)
+- gruvbox (`gruvbox`)
+
+Switch:
+
+- `<leader>tt` to pick a theme
+- `:Theme` / `:Theme gruvbox`
+
+Note: local `pack/` installs are ignored; prefer managing plugins via lazy.nvim for multi-machine consistency.
+
+### AI Completion (Supermaven)
+
+This config uses Supermaven for inline completion.
+
+- First-time setup: `:SupermavenUseFree` (or `:SupermavenUsePro`)
+- Keymaps (insert mode):
+  - accept: `<C-j>`
+  - accept word: `<C-k>`
+  - clear: `<C-]>`
+
 ## Installation
 
 ### Install Neovim
@@ -226,4 +282,3 @@ sudo dnf install -y gcc make git ripgrep fd-find unzip neovim
 sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 ```
 </details>
-
