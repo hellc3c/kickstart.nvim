@@ -7,3 +7,5 @@ spell/
 
 # Local-only plugin installs (prefer lazy.nvim-managed plugins)
 pack/
+
+.DS_Store
