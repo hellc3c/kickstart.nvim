@@ -45,14 +45,14 @@ git merge upstream/master
 
 This config keeps multiple themes available:
 
-- tokyonight (`tokyonight-night`)
-- rose-pine (`rose-pine`)
-- gruvbox (`gruvbox`)
+- tokyonight (`tokyonight-night`, `tokyonight-storm`, `tokyonight-moon`, `tokyonight-day`)
+- rose-pine (`rose-pine`, `rose-pine-moon`, `rose-pine-dawn`)
+- gruvbox (`gruvbox:dark`, `gruvbox:light`)
 
 Switch:
 
 - `<leader>tt` to pick a theme
-- `:Theme` / `:Theme gruvbox`
+- `:Theme` / `:Theme gruvbox:light`
 
 Note: local `pack/` installs are ignored; prefer managing plugins via lazy.nvim for multi-machine consistency.
 
